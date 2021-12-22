@@ -16,7 +16,7 @@ pthread_cond_t x_cond;
 void *primeira (void *t) {
     pthread_mutex_lock(&x_mutex);
 
-    // Aqui conferimos se nossa flag ja passou por todas as threads necessarias, somente quando tiver o valor igual a Nthreads podera ser executada printando a frase final
+    // Aqui conferimos se nossa flag ja passou por todas as threads necessarias, somente quando tiver o valor igual a Nthreads - um, ou seja, faltando apenas ela, podera ser executada printando a frase final
     while (flagDeControle < NTHREADS-1) { 
         pthread_cond_wait(&x_cond, &x_mutex);
     }
