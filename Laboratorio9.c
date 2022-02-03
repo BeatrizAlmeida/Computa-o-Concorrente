@@ -28,7 +28,7 @@ void *t5 () {
 //funcao executada pela thread 2, 3 e 4
 void *tIntermediarias (void *threadid) {
     int *tid = (int*) threadid;
-    sem_wait(&condtIntermediarias); //espera sua condicao executar
+    sem_wait(&condtIntermediarias); //espera sua condicao para executar
 
     switch (*tid) {
         case 2:
